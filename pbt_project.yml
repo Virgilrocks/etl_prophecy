@@ -1,0 +1,46 @@
+name: Demo
+description: ''
+version: 0.0.1
+author: virgilletters@gmail.com
+language: python
+buildSystem: ''
+buildSystemDetails:
+  artefactID: demo
+  parentArtefactID: virgillettersgmail.com_team
+  buildSystem: wheel
+  author: null
+  createdAt: '2023-09-20 16:32:52'
+pipelines:
+  pipelines/demo_etl_pipeline:
+    name: demo_etl_pipeline
+    description: ''
+    author: virgilletters@gmail.com
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-09-20 16:32:52'
+    datasets:
+      inputs: []
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+datasets: {}
+templates: {}
+jobs: {}
+functions:
+  author: null
+  createdAt: '2023-09-20 16:32:52'
+  gems: {}
+  udfs: {}
+  udafs: {}
+  expressions: {}
+subgraphs: {}
+sqlModels: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies: {}
+pipelineConfigurations: {}
