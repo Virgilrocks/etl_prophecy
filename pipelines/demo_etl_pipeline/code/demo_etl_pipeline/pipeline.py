@@ -8,7 +8,11 @@ from prophecy.utils import *
 from demo_etl_pipeline.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    pass
+    df_virgil_poc_dataset = virgil_poc_dataset(spark)
+    df_Reformat_1 = Reformat_1(spark, df_virgil_poc_dataset)
+    df_Filter_1 = Filter_1(spark, df_Reformat_1)
+    df_OrderBy_1 = OrderBy_1(spark, df_Filter_1)
+    virgil_poc_write(spark, df_OrderBy_1)
 
 def main():
     spark = SparkSession.builder\

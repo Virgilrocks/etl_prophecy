@@ -48,16 +48,40 @@
     "topLevelPackage" : "demo_etl_pipeline",
     "configurationVersion" : "v1"
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "v1fmSMOOoSVdsYYwbFCiB$$sqm_RefJe2JLbZ4mydhwl",
+    "source" : "B88j66A1_-DPBDP1UJaHg$$iE35WpGaTfYvAOPfY9aF4",
+    "sourcePort" : "JWYXNnv5eSaK3gtpBnKFz$$q18emR5cuicWdK9DOmVIz",
+    "target" : "OGwlqxacbiSkhdmxw1TR9$$BvXru6GJRKjooLt8BLtZP",
+    "targetPort" : "Ih2bww8OEeQU7o1wZXLW8$$cpvwnvOjG450rkYQhNR2U"
+  }, {
+    "id" : "VyExvRsKRe8gUcBx7Cb-T",
+    "source" : "njWrXiXt25r0iAPGRsnbA$$qCWpWK62SMVQjG0Uhlas-",
+    "sourcePort" : "_Of2vH1HDtNDxGVOqXeu2$$naTDBJisHsBTdarsz4lKV",
+    "target" : "MN3hKi0-Eqrxx1G--npwM$$ghgOyjIoe1KzUBd1HiMLu",
+    "targetPort" : "x9uG8PDh7PG_6BPYFzjUH$$i3L3yby67F_MnhfS5iIj4"
+  }, {
+    "id" : "lvE8KMHqj5GFyR0r-mu5n$$CASTuPHyGQHRMdc0JWVOE",
+    "source" : "Iw1lZe0UZd0OzbSisiDnx$$IVm90vXUb9-IzBzwNNNLt",
+    "sourcePort" : "5fkHZOc9POrnvIB6cEgN_$$9n8d4Yasb9GGnypOXkfan",
+    "target" : "B88j66A1_-DPBDP1UJaHg$$iE35WpGaTfYvAOPfY9aF4",
+    "targetPort" : "iMuyNiO2suBTl1azwUTZT$$IaggiTOPfuorm0XfrEh87"
+  }, {
+    "id" : "bNCcbH-Moa5Q9mvpPXu2p",
+    "source" : "MN3hKi0-Eqrxx1G--npwM$$ghgOyjIoe1KzUBd1HiMLu",
+    "sourcePort" : "rDcTzjIDhalDWa6SOVwsh$$yRSBy1ZmtqW8WbmAiyp54",
+    "target" : "Iw1lZe0UZd0OzbSisiDnx$$IVm90vXUb9-IzBzwNNNLt",
+    "targetPort" : "EJPKuc_q3fSkHxKUHDaCw$$md5mAXlc2ed8y0bR3fRJH"
+  } ],
   "processes" : {
     "njWrXiXt25r0iAPGRsnbA$$qCWpWK62SMVQjG0Uhlas-" : {
       "id" : "njWrXiXt25r0iAPGRsnbA$$qCWpWK62SMVQjG0Uhlas-",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_0",
-        "slug" : "Source_0",
-        "x" : 40,
-        "y" : 100,
+        "label" : "virgil_poc_dataset",
+        "slug" : "virgil_poc_dataset",
+        "x" : -1380,
+        "y" : -360,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -72,7 +96,243 @@
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
-      "properties" : { }
+      "properties" : {
+        "datasetId" : "datasets/virgil_poc_dataset"
+      }
+    },
+    "MN3hKi0-Eqrxx1G--npwM$$ghgOyjIoe1KzUBd1HiMLu" : {
+      "id" : "MN3hKi0-Eqrxx1G--npwM$$ghgOyjIoe1KzUBd1HiMLu",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -1140,
+        "y" : -320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "x9uG8PDh7PG_6BPYFzjUH$$i3L3yby67F_MnhfS5iIj4",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "rDcTzjIDhalDWa6SOVwsh$$yRSBy1ZmtqW8WbmAiyp54",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customer_id"
+          },
+          "description" : ""
+        }, {
+          "target" : "first_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first_name"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "x9uG8PDh7PG_6BPYFzjUH$$i3L3yby67F_MnhfS5iIj4##customer_id", "x9uG8PDh7PG_6BPYFzjUH$$i3L3yby67F_MnhfS5iIj4##first_name" ]
+      }
+    },
+    "OGwlqxacbiSkhdmxw1TR9$$BvXru6GJRKjooLt8BLtZP" : {
+      "id" : "OGwlqxacbiSkhdmxw1TR9$$BvXru6GJRKjooLt8BLtZP",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "virgil_poc_write",
+        "slug" : "virgil_poc_write",
+        "x" : -580,
+        "y" : -320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ih2bww8OEeQU7o1wZXLW8$$cpvwnvOjG450rkYQhNR2U",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/virgil_poc_write"
+      }
+    },
+    "Iw1lZe0UZd0OzbSisiDnx$$IVm90vXUb9-IzBzwNNNLt" : {
+      "id" : "Iw1lZe0UZd0OzbSisiDnx$$IVm90vXUb9-IzBzwNNNLt",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Filter_1",
+        "slug" : "Filter_1",
+        "x" : -980,
+        "y" : -180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EJPKuc_q3fSkHxKUHDaCw$$md5mAXlc2ed8y0bR3fRJH",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "5fkHZOc9POrnvIB6cEgN_$$9n8d4Yasb9GGnypOXkfan",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "EJPKuc_q3fSkHxKUHDaCw$$md5mAXlc2ed8y0bR3fRJH##customer_id" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "customer_id <= 5"
+        }
+      }
+    },
+    "B88j66A1_-DPBDP1UJaHg$$iE35WpGaTfYvAOPfY9aF4" : {
+      "id" : "B88j66A1_-DPBDP1UJaHg$$iE35WpGaTfYvAOPfY9aF4",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "OrderBy_1",
+        "slug" : "OrderBy_1",
+        "x" : -820,
+        "y" : -320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iMuyNiO2suBTl1azwUTZT$$IaggiTOPfuorm0XfrEh87",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "JWYXNnv5eSaK3gtpBnKFz$$q18emR5cuicWdK9DOmVIz",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "iMuyNiO2suBTl1azwUTZT$$IaggiTOPfuorm0XfrEh87##first_name" ],
+        "orders" : [ {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first_name"
+          },
+          "sortType" : "asc"
+        } ]
+      }
     }
   },
   "ports" : {
@@ -80,22 +340,5 @@
     "outputs" : [ ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.njWrXiXt25r0iAPGRsnbA$$qCWpWK62SMVQjG0Uhlas-.properties.datasetId",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "dataset id missing",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

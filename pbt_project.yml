@@ -20,11 +20,39 @@ pipelines:
     language: python
     createdAt: '2023-09-20 16:32:52'
     datasets:
-      inputs: []
-      outputs: []
+      inputs:
+      - datasets/virgil_poc_dataset
+      outputs:
+      - datasets/virgil_poc_write
     subgraphs: []
     dependencies: {}
-datasets: {}
+datasets:
+  datasets/virgil_poc_dataset:
+    name: virgil_poc_dataset
+    description: ''
+    author: virgilletters@gmail.com
+    createdAt: '2023-09-27 06:42:08'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 4877
+        datasetType: File
+        description: ''
+        author: virgilletters@gmail.com
+        createdAt: '2023-09-27 06:42:08'
+  datasets/virgil_poc_write:
+    name: virgil_poc_write
+    description: ''
+    author: virgilletters@gmail.com
+    createdAt: '2023-09-27 06:52:53'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 4877
+        datasetType: File
+        description: ''
+        author: virgilletters@gmail.com
+        createdAt: '2023-09-27 06:52:53'
 templates: {}
 jobs: {}
 functions:
