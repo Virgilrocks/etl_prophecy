@@ -13,4 +13,4 @@ def virgil_poc_write(spark: SparkSession, in0: DataFrame):
         .mode("error")\
         .option("separator", ",")\
         .option("header", True)\
-        .csv("dbfs:/Prophecy/45cd0a2f311d21e2b47c79c323ecf8a9/target4")
+        .csv("dbfs:/Prophecy/45cd0a2f311d21e2b47c79c323ecf8a9/target5")

@@ -54,7 +54,31 @@ datasets:
         author: virgilletters@gmail.com
         createdAt: '2023-09-27 06:52:53'
 templates: {}
-jobs: {}
+jobs:
+  jobs/virgil_job_schedule:
+    name: virgil_job_schedule
+    description: ''
+    fabricUID: 4877
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: Small
+    scheduleCron: 0 0 0 1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/demo_etl_pipeline
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-09-27 09:14:29'
+    author: virgilletters@gmail.com
 functions:
   author: null
   createdAt: '2023-09-20 16:32:52'
